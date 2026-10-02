@@ -1,3 +1,5 @@
+# Student Grade Calculator
+
 def calculate_grade(marks):
     if marks < 0 or marks > 100:
         return "Invalid Marks"
@@ -13,18 +15,16 @@ def calculate_grade(marks):
         return "D"
     else:
         return "F"
-
-
+students = [
+    ("Ravi", 95),
+    ("Anu", 87),
+    ("Rahul", 76),
+    ("Priya", 64),
+    ("Kiran", 52),
+    ("Sneha", 38),
+    ("Arjun", 105)
+]
 print("Student Grade Calculator")
-print("-" * 30)
-
-name = input("Enter student name: ")
-marks = float(input("Enter marks: "))
-
-grade = calculate_grade(marks)
-
-print("\nResult")
-print("-" * 30)
-print("Student:", name)
-print("Marks:", marks)
-print("Grade:", grade)
+for name, marks in students:
+    grade = calculate_grade(marks)
+    print(f"Student: {name} | Marks: {marks} | Grade: {grade}")
